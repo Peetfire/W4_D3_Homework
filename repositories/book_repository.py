@@ -1,4 +1,4 @@
-from controllers.books_controller import books
+# from controllers.books_controller import books
 from db.run_sql import run_sql
 
 from models.book import Book
@@ -38,8 +38,10 @@ def delete_all():
     run_sql(sql)
 
 
-def delete():
-    pass
+def delete(id):
+    sql = "DELETE FROM books WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 
 def update():

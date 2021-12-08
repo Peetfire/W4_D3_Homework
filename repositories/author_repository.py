@@ -25,8 +25,16 @@ def select_all():
     return authors
 
 
-def select():
-    pass
+def select(id):
+    author = None
+    sql = "SELECT * FROM authors WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    if result is not None:
+        author = Author(result['first_name'], result['last_name'], result['id'])
+    return author
+
+    
 
 def delete_all():
     sql = "DELETE FROM authors"
