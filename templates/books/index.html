@@ -2,7 +2,14 @@
 {% block content %}
 
     {% for book in all_books %}
-        <div class="book">
+        {% if book.id % 2 == 0 %}
+        {% set my_no = 1 %}
+        {% elif book.id % 3 == 0 %}
+        {% set my_no = 2 %}
+        {% else %}
+        {% set my_no = 3 %}
+        {% endif %}
+        <div class="book{{my_no}}">
             <p>{{ book.title }}</p>
             <p>{{ book.author.name }}</p>
             <p>{{ book.genre }}</p>

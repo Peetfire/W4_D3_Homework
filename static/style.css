@@ -10,19 +10,51 @@ body{
   background-color: bisque;
 }
 
-.book {
-  background-image: url('images/book-binding1.jpeg');
+.book1 {
+  background-image: url('images/book-binding3.jpeg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* border: 1px solid #ccc; */
   width: 85px;
   height: 340px;
   padding: 3px;
   padding-bottom: 5px;
   display: grid;
   grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
-  
+  margin: 10px;
+  margin-top: 40px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.book2 {
+  background-image: url('images/book-binding2.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 85px;
+  height: 340px;
+  padding: 3px;
+  padding-bottom: 5px;
+  display: grid;
+  grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
+  margin: 10px;
+  margin-top: 40px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.book3 {
+  background-image: url('images/book-binding3.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 85px;
+  height: 340px;
+  padding: 3px;
+  padding-bottom: 5px;
+  display: grid;
+  grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
   margin: 10px;
   margin-top: 40px;
   text-align: center;
