@@ -1,16 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
+
     {% for book in all_books %}
         <div class="book">
             <p>{{ book.title }}</p>
-            <p>{{ book.author.first_name }}</p>
-            <p>{{ book.author.last_name }}</p>
+            <p>{{ book.author.name }}</p>
             <p>{{ book.genre }}</p>
             <p>{{ book.publisher }}</p>
-            <form action="/books/delete/{{book.id}}" method="post">
-                <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
-            </form>
+            <div class="edit-container">
+                <form action="/books/delete/{{book.id}}" method="post">
+                    <button class="trash-button"><i class="fa fa-trash-o fa-2x" style="color:red" aria-hidden="true"></i></button>
+                </form>
+                <form action="/books/{{book.id}}/edit" method="get">
+                    <button class="trash-button"><i class="far fa-edit fa-2x" style="color:green" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            
         </div>
     {% endfor %}
     
 {% endblock %}
+{% block home %}
+<div class="add-container">
+    <form action="/books/new" method="get">
+        <button class="add-button"><i class="fa-regular fa-square-plus fa-2x" style="color:indigo" aria-hidden="true">Add Book</i></button>
+    </form>
+</div>
+    
+{% endblock home %}
+

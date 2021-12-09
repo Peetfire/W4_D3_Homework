@@ -29,8 +29,14 @@ def select_all():
 
 
 
-def select():
-    pass
+def select(id):
+    sql = "SELECT * FROM books WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)[0]
+    if results is not None:
+        author = author_repository.select(results['author_id'])
+        book = Book(results['title'], results['genre'], author, results['publisher'], results['id'])
+    return book
 
 
 def delete_all():
@@ -44,5 +50,7 @@ def delete(id):
     run_sql(sql, values)
 
 
-def update():
-    pass
+def update(book):
+    sql = "UPDATE books SET (title, genre, publisher, author_id) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [book.title, book.genre, book.publisher, book.author.id, book.id]
+    run_sql(sql, values)
